@@ -8,16 +8,18 @@ app.get('/', (req, res) => {
 });
 
 app.get('/counter', (req, res) => {
-    res.send(`Count: ${counter}`)
-  });
+  res.send(`Count: ${counter}`)
+});
 
 app.post('/counter', (req, res) => {
-    res.send(counter += 1)
+  counter += 1
+  res.status(200).send()
 })
 
 app.delete('/counter', (req, res) => {
-    res.send(counter = 0)
-  })
+  counter = 0
+  res.status(200).send()
+})
 
 console.log(`Server listening on localhost:${port}`);
 app.listen(port);
